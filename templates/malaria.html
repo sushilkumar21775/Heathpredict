@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="form-container">
+    <div class="form-title">
+        <h1>🦟 Malaria Detection</h1>
+        <p class="mt-2">Upload a blood smear image for analysis</p>
+    </div>
+
+    <div class="card-glass">
+        {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+        {% endif %}
+
+        <form action="{{ url_for('malariapredictPage') }}" method="POST" enctype="multipart/form-data">
+            <label class="file-upload">
+                <div class="file-upload-icon">📤</div>
+                <p style="color: var(--text-primary); margin-bottom: 0.5rem;">Click to upload blood smear image</p>
+                <p style="font-size: 0.875rem;">Supports JPG, PNG formats</p>
+                <input type="file" name="image" accept="image/*" required onchange="updateFileName(this)">
+            </label>
+            <p id="fileName" style="text-align: center; margin-top: 1rem; color: var(--accent-primary);"></p>
+            <button type="submit" class="btn btn-primary">Analyze Image</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function updateFileName(input) {
+        const fileName = input.files[0] ? input.files[0].name : '';
+        document.getElementById('fileName').textContent = fileName ? '📎 ' + fileName : '';
+    }
+</script>
+{% endblock %}

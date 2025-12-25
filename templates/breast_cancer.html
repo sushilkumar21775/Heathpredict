@@ -1,0 +1,90 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="form-container">
+    <div class="form-title">
+        <h1>🎗️ Breast Cancer Prediction</h1>
+        <p class="mt-2">Enter tumor characteristics for analysis</p>
+    </div>
+
+    <div class="card-glass">
+        <form action="{{ url_for('predictPage') }}" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="text" name="mean_radius" class="form-input" placeholder="Mean Radius" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_texture" class="form-input" placeholder="Mean Texture" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_perimeter" class="form-input" placeholder="Mean Perimeter" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_area" class="form-input" placeholder="Mean Area" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_smoothness" class="form-input" placeholder="Mean Smoothness" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_compactness" class="form-input" placeholder="Mean Compactness"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_concavity" class="form-input" placeholder="Mean Concavity" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_concave_points" class="form-input" placeholder="Mean Concave Points"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_symmetry" class="form-input" placeholder="Mean Symmetry" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mean_fractal_dimension" class="form-input"
+                        placeholder="Mean Fractal Dimension" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="radius_error" class="form-input" placeholder="Radius Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="texture_error" class="form-input" placeholder="Texture Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="perimeter_error" class="form-input" placeholder="Perimeter Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="area_error" class="form-input" placeholder="Area Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="smoothness_error" class="form-input" placeholder="Smoothness Error"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="compactness_error" class="form-input" placeholder="Compactness Error"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="concavity_error" class="form-input" placeholder="Concavity Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="concave_points_error" class="form-input" placeholder="Concave Points Error"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="symmetry_error" class="form-input" placeholder="Symmetry Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="fractal_dimension_error" class="form-input"
+                        placeholder="Fractal Dimension Error" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="worst_radius" class="form-input" placeholder="Worst Radius" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="worst_texture" class="form-input" placeholder="Worst Texture" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Now</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

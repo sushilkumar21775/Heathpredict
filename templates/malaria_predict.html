@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="result-container">
+    {% if pred == 1 %}
+    <div class="result-card result-positive">
+        <div class="result-icon">🦟</div>
+        <h2 class="result-title">Malaria Detected</h2>
+        <p class="result-text">The analysis indicates presence of malaria parasites. Please seek medical attention
+            immediately.</p>
+        <a href="{{ url_for('malariaPage') }}" class="btn btn-secondary">Analyze Another Image</a>
+    </div>
+    {% else %}
+    <div class="result-card result-negative">
+        <div class="result-icon">✅</div>
+        <h2 class="result-title">No Malaria Detected</h2>
+        <p class="result-text">The blood smear appears clear of malaria parasites.</p>
+        <a href="{{ url_for('malariaPage') }}" class="btn btn-secondary">Analyze Another Image</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

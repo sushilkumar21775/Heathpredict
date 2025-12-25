@@ -1,0 +1,96 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="form-container">
+    <div class="form-title">
+        <h1>🫘 Kidney Disease Prediction</h1>
+        <p class="mt-2">Enter your kidney function test results</p>
+    </div>
+
+    <div class="card-glass">
+        <form action="{{ url_for('predictPage') }}" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="text" name="age" class="form-input" placeholder="Age (years)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="bp" class="form-input" placeholder="Blood Pressure (mmHg)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sg" class="form-input" placeholder="Specific Gravity" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="al" class="form-input" placeholder="Albumin (0-5)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="su" class="form-input" placeholder="Sugar (0-5)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="rbc" class="form-input"
+                        placeholder="Red Blood Cells (1=Normal, 0=Abnormal)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pc" class="form-input" placeholder="Pus Cell (1=Normal, 0=Abnormal)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pcc" class="form-input" placeholder="Pus Cell Clumps (1=Present, 0=Not)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ba" class="form-input" placeholder="Bacteria (1=Present, 0=Not)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="bgr" class="form-input" placeholder="Blood Glucose Random (mg/dL)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="bu" class="form-input" placeholder="Blood Urea (mg/dL)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sc" class="form-input" placeholder="Serum Creatinine (mg/dL)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sod" class="form-input" placeholder="Sodium (mEq/L)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pot" class="form-input" placeholder="Potassium (mEq/L)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="hemo" class="form-input" placeholder="Hemoglobin (g/dL)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pcv" class="form-input" placeholder="Packed Cell Volume (%)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="wc" class="form-input" placeholder="White Blood Cell Count" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="rc" class="form-input" placeholder="Red Blood Cell Count (millions/cmm)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="htn" class="form-input" placeholder="Hypertension (1=Yes, 0=No)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="dm" class="form-input" placeholder="Diabetes Mellitus (1=Yes, 0=No)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cad" class="form-input" placeholder="Coronary Artery Disease (1=Yes, 0=No)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="appet" class="form-input" placeholder="Appetite (1=Good, 0=Poor)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="pe" class="form-input" placeholder="Pedal Edema (1=Yes, 0=No)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ane" class="form-input" placeholder="Anemia (1=Yes, 0=No)" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Now</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

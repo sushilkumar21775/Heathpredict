@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="form-container">
+    <div class="form-title">
+        <h1>❤️ Heart Disease Prediction</h1>
+        <p class="mt-2">Enter your cardiovascular health metrics</p>
+    </div>
+
+    <div class="card-glass">
+        <form action="{{ url_for('predictPage') }}" method="POST">
+            <div class="form-grid">
+                <div class="form-group">
+                    <input type="text" name="age" class="form-input" placeholder="Age (years)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sex" class="form-input" placeholder="Sex (1 = Male, 0 = Female)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cp" class="form-input" placeholder="Chest Pain Type (0-3)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="trestbps" class="form-input" placeholder="Resting Blood Pressure (mmHg)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="chol" class="form-input" placeholder="Serum Cholesterol (mg/dL)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="fbs" class="form-input"
+                        placeholder="Fasting Blood Sugar > 120 (1=Yes, 0=No)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="restecg" class="form-input" placeholder="Resting ECG Results (0-2)"
+                        required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="thalach" class="form-input" placeholder="Max Heart Rate Achieved" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="exang" class="form-input"
+                        placeholder="Exercise Induced Angina (1=Yes, 0=No)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="oldpeak" class="form-input" placeholder="ST Depression (oldpeak)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="slope" class="form-input" placeholder="Slope of Peak ST (0-2)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ca" class="form-input" placeholder="Major Vessels (0-3)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="thal" class="form-input"
+                        placeholder="Thal (1=Normal, 2=Fixed, 3=Reversible)" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict Now</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
